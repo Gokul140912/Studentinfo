@@ -4,15 +4,16 @@ from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.express as px
 
-# Load data from an Excel file with a specific sheet
+# Replace 'path/to/your/excel/file.xlsx' with the raw GitHub URL
 excel_file_path = 'https://github.com/Gokul140912/Tst/blob/main/Test%20file.xlsx'
-sheet_name = 'Sheet1'  # Replace with the actual sheet name
 
 try:
-    df = pd.read_excel(excel_file_path, sheet_name=sheet_name)
+    df = pd.read_excel(excel_file_path, sheet_name='Sheet1')
 except Exception as e:
     print(f"Error loading data from Excel file: {e}")
     df = pd.DataFrame()  # Create an empty DataFrame to avoid further errors
+
+# Rest of your code...
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
